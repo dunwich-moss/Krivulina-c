@@ -12,6 +12,6 @@
 
 ## Компиляция и запуск
 ```bash
-cd lab01
-gcc task1.c -o task1
-./task1
+cd Krivulina-c
+gcc task.c -o task
+./task
