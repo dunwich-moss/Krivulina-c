@@ -16,7 +16,6 @@ int main() {
         return 1;
     }
     
-    
     struct Book* library = (struct Book*)malloc(n * sizeof(struct Book));
     if (library == NULL) {
         printf("error\n");
@@ -24,16 +23,19 @@ int main() {
     }
 
     for (int i = 0; i < n; i++) {
-    
         fgets(library[i].name, sizeof(library[i].name), stdin);
         library[i].name[strcspn(library[i].name, "\n")] = 0;
         
         fgets(library[i].author, sizeof(library[i].author), stdin);
         library[i].author[strcspn(library[i].author, "\n")] = 0;
         
-        scanf("%d", &library[i].year);
-        scanf("%d", &library[i].cena);
-        getchar(); 
+        while (scanf("%d", &library[i].year) != 1) {
+            getchar();  
+        }
+        while (scanf("%d", &library[i].cena) != 1) {
+            getchar();
+        }
+        getchar();
     }
     
     printf("\nlibrary:\n");
